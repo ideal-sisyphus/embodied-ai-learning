@@ -9,7 +9,9 @@ print("环境初始化成功，开始 PD 控制测试...")
 for step in range(200):  # 把100步改为200步，看看能坚持多久
     # PD控制：根据角度和角速度决定推的方向
     # observation[2] 是角度，observation[3] 是角速度
-    if observation[2] + observation[3] > 0:
+    Kp = 1.0
+    Kd = 1.0
+    if Kp * observation[2] + Kd * observation[3] > 0:s
         action = 1  # 向右推
     else:
         action = 0  # 向左推
